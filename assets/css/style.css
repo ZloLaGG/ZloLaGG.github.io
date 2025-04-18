@@ -28,11 +28,29 @@ h1 {
     border: none;
     font-size: 1.5em;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s, font-size 0.3s;
+    z-index: 1000; /* Убедимся, что кнопка всегда сверху */
 }
 
 .theme-toggle:hover {
     transform: scale(1.2);
+}
+
+/* Адаптивность для кнопки переключения темы */
+@media (max-width: 768px) {
+    .theme-toggle {
+        font-size: 1.2em; /* Уменьшаем размер кнопки на мобильных устройствах */
+        top: 5px; /* Сдвигаем кнопку ближе к верхнему краю */
+        right: 5px; /* Сдвигаем кнопку ближе к правому краю */
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-toggle {
+        font-size: 1em; /* Ещё меньше размер для очень маленьких экранов */
+        top: 5px;
+        right: 5px;
+    }
 }
 
 /* Адаптивность для кнопок поиска */
