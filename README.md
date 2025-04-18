@@ -1,8 +1,8 @@
-# News App
+# Nempi - Новости
 
-This project is a simple news application built using HTML, CSS, and JavaScript. It fetches news articles from a public API and displays them on a single page without the need for a server-side component. The application is designed to be hosted on GitHub Pages.
+Этот проект представляет собой простое новостное приложение, созданное с использованием HTML, CSS и JavaScript. Оно получает статьи из публичного API и отображает их на одной странице без необходимости использования серверной части.
 
-## Project Structure
+## Структура проекта
 
 ```
 news-app
@@ -15,43 +15,33 @@ news-app
 └── README.md
 ```
 
-## Files
+## Файлы
 
-- **assets/css/styles.css**: Contains styles for the application, defining the appearance of elements on the page.
+- **assets/css/styles.css**: Содержит стили для приложения, определяющие внешний вид элементов на странице.
   
-- **assets/js/app.js**: Contains JavaScript code responsible for the application's functionality. It interacts with the news API to fetch and display news articles.
+- **assets/js/app.js**: Содержит JavaScript-код, отвечающий за функциональность приложения. Он взаимодействует с API новостей для получения и отображения статей.
 
-- **index.html**: The main HTML page of the application. It includes links to the CSS and JavaScript files, as well as the markup for displaying news articles.
+- **index.html**: Основная HTML-страница приложения. Включает ссылки на файлы CSS и JavaScript, а также разметку для отображения новостных статей.
 
-## Installation
+## Установка
 
-1. Clone the repository to your local machine:
+1. Клонируйте репозиторий на ваш локальный компьютер:
    ```
    git clone https://github.com/yourusername/news-app.git
    ```
 
-2. Navigate to the project directory:
+2. Перейдите в директорию проекта:
    ```
    cd news-app
    ```
 
-3. Open `index.html` in your web browser to view the application.
+3. Откройте `index.html` в вашем веб-браузере, чтобы просмотреть приложение.
 
-## Usage
+## Использование
 
-- The application will automatically fetch news articles from the API when the page is loaded.
-- You can customize the news query by modifying the JavaScript code in `assets/js/app.js`.
+- Приложение автоматически получает статьи из API при загрузке страницы.
+- Вы можете настроить запрос новостей, изменив JavaScript-код в `assets/js/app.js`.
 
-## Deployment
+## Лицензия
 
-To deploy the application on GitHub Pages:
-
-1. Push your code to a GitHub repository.
-2. Go to the repository settings.
-3. Scroll down to the "GitHub Pages" section.
-4. Select the branch you want to use for GitHub Pages (usually `main` or `master`).
-5. Save the settings and your application will be live at `https://yourusername.github.io/news-app/`. 
-
-## License
-
-This project is licensed under the MIT License.
+Этот проект лицензирован на условиях лицензии MIT.
