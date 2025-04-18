@@ -21,7 +21,7 @@ h1 {
 
 /* Кнопка переключения темы */
 .theme-toggle {
-    position: absolute;
+    position: fixed; /* Фиксированное позиционирование */
     top: 10px;
     right: 10px;
     background: none;
@@ -39,17 +39,33 @@ h1 {
 /* Адаптивность для кнопки переключения темы */
 @media (max-width: 768px) {
     .theme-toggle {
-        font-size: 1.2em; /* Уменьшаем размер кнопки на мобильных устройствах */
-        top: 5px; /* Сдвигаем кнопку ближе к верхнему краю */
-        right: 5px; /* Сдвигаем кнопку ближе к правому краю */
+        font-size: 1.2em;
+        top: 10px;
+        right: 10px;
     }
 }
 
 @media (max-width: 480px) {
     .theme-toggle {
-        font-size: 1em; /* Ещё меньше размер для очень маленьких экранов */
-        top: 5px;
-        right: 5px;
+        font-size: 1em;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* Исправление для ширины экрана от 350px до 470px */
+@media (max-width: 470px) and (min-width: 350px) {
+    .theme-toggle {
+        position: relative; /* Относительное позиционирование */
+        margin-left: auto; /* Сдвигаем кнопку вправо */
+        margin-right: 10px;
+        margin-top: 10px;
+        display: block; /* Убедимся, что кнопка остаётся видимой */
+        font-size: 1.2em;
+    }
+
+    h1 {
+        margin-top: 50px; /* Добавляем отступ сверху, чтобы текст не перекрывался */
     }
 }
 
