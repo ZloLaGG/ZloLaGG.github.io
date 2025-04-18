@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nempi - Новости</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/svg/home.svg" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <button id="themeToggle" class="theme-toggle">🌙</button> <!-- Кнопка переключения темы -->
+        <h1>Последние новости</h1>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Поиск новостей...">
+            <button onclick="fetchNews()">Поиск</button>
+            <button onclick="clearSearch()">Очистить</button>
+        </div>
+        <div class="loading" id="loading" style="display: none;">Загрузка...</div> <!-- Индикатор загрузки -->
+        <div class="news-grid" id="newsGrid"></div>
+        <button id="loadMoreBtn" style="display: none;" onclick="loadMoreNews()">Загрузить больше</button>
+    </div>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
