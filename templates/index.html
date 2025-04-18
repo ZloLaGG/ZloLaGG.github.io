@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nempi - Новости</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='svg/home.svg') }}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Последние новости</h1>
+        <form method="GET" action="/">
+            <label for="category-select">Выберите категорию:</label>
+            <select id="category-select" name="category" onchange="this.form.submit()">
+                <option value="">Все категории</option>
+                {% if categories %}
+                    {% for cat in categories %}
+                        <option value="{{ cat }}" {% if cat == selected_category %}selected{% endif %}>{{ cat|capitalize }}</option>
+                    {% endfor %}
+                {% else %}
+                    <option value="" disabled>Категории отсутствуют</option>
+                {% endif %}
+            </select>
+            <input type="text" name="query" placeholder="Поиск новостей..." value="{{ query or '' }}">
+            <button type="submit">Найти</button>
+        </form>
+    </header>
+    <main>
+        <ul class="news-list" id="news-list">
+            {% for article in news %}
+                <li class="news-item">
+                    {% if article.urlToImage %}
+                        <img src="{{ article.urlToImage }}" alt="{{ article.title or 'Изображение новости' }}" class="news-image">
+                    {% endif %}
+                    <div class="news-content">
+                        <h2><a href="{{ article.url }}" target="_blank" rel="noopener noreferrer">{{ article.title }}</a></h2>
+                        <p class="meta">Источник: {{ article.source.name }} | Опубликовано: {{ article.publishedAt|date("d MMMM yyyy") }}</p>
+                        {% if article.description %}
+                            <p>{{ article.description }}</p>
+                        {% endif %}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        {% if news|length > 0 %}
+            <button id="load-more" data-page="1">Загрузить ещё</button>
+        {% else %}
+            <p>Новости не найдены. Попробуйте изменить запрос!</p>
+        {% endif %}
+        <div id="loading">Загрузка...</div>
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
